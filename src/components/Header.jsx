@@ -9,7 +9,7 @@ function Header() {
         <span className='text-lg font-bold text-green-400 px-4'>ShopMe</span>
         <div className='relative mx-4'>
            <FiShoppingCart className='text-2xl text-green-700'/>
-           {cart >0 && (
+           {cart > 0 && (
             <span className='absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full'>
               {cart}
             </span> 
