@@ -1,23 +1,9 @@
-import { useEffect, useState } from 'react'
 import ProductCard from '../../components/ProductCard';
+import { useContextProduct } from '../../context/productContext';
 
 const HomePage =() =>{
-  const [products, setProducts] = useState([]);
-  const [_, setErrors] = useState(null)
-  useEffect(() => {
-    const fetchProducts = async() => {
-      try {
-         const res = await fetch("/api/products");
-      const data =  await res.json();
-      setProducts(data)
-      console.log(data)
-      } catch (err) {
-        setErrors(err)
-      }
-     
-    }
-    fetchProducts()
-  },[])
+const {products} = useContextProduct()
+console.log(products)
   return (
     <div className='max-w-6xl mt-4 mx-auto px-4 py-2'>
         <h1 className="text-2xl font-bold">💰 Product Catalogue</h1>
